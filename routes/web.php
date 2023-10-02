@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,11 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('layouts.test');
 });
+Route::get('/events', function () {
+    return view('Evenement.evenement');
+});
+Route::resource("/event", EventController::class);
+
 
 
 
