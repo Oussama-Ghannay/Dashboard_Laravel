@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Models\Blog;
 
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\TypeController;
@@ -28,7 +30,22 @@ Route::get('/test', function () {
 Route::get('/events', function () {
     return view('Evenement.evenement');
 });
+
+// ################################################################################
+Route::get('/blogii', function () {
+    $blog = Blog::all();
+    return view('Blog.index')->with('blogg', $blog);
+});
+// ################################################################################
+
+Route::get('/addblog', function () {
+    return view('Blog.create');
+});
 Route::resource("/event", EventController::class);
+Route::resource("/blog", BlogController::class);
+Route::patch('/blog/{blog}', 'BlogController@update')->name('blog.update');
+
+ 
 
 
 
