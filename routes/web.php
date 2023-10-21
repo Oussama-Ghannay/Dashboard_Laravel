@@ -31,6 +31,9 @@ Route::get('/events', function () {
     return view('Evenement.evenement');
 });
 
+Route::resource("/event", EventController::class);
+
+
 // ################################################################################
 Route::get('/blogii', function () {
     $blog = Blog::all();
