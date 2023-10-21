@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>DarkPan - Bootstrap 5 Admin Template</title>
@@ -34,8 +33,8 @@
 
 
     
-</head>
 
+</head>
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
@@ -46,11 +45,9 @@
         </div>
         <!-- Spinner End -->
 
-
         <!-- Sidebar Start -->
         @include('partials.sidebar')
         <!-- Sidebar End -->
-
 
         <!-- Content Start -->
         <div class="content">
@@ -64,11 +61,9 @@
             
             <!-- Footer Start -->
             @include('partials.footer')
-   
             <!-- Footer End -->
         </div>
         <!-- Content End -->
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -77,6 +72,8 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('lib/chart/chart.min.js') }}"></script>
     <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
     <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
