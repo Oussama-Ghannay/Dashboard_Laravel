@@ -39,9 +39,18 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+         $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'date' => 'required|date',
+            'lieu' => 'required',
+            'artiste' => 'required',
+            'categorie' => 'required',
+        ]);
         $input = $request->all();
         Event::create($input);
         return redirect('event')->with('flash_message', 'Event Addedd!');  
+
     }
 
     /**
