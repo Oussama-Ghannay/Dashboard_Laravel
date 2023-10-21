@@ -9,6 +9,7 @@
         {!! csrf_field() !!}
         <label>Nom</label></br>
         <input type="text" name="nom" id="nom" class="form-control"></br>
+
         @error('nom')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
@@ -37,6 +38,7 @@
         @error('categorie')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
+
        
         
         

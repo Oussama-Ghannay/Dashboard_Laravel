@@ -5,6 +5,7 @@
   <div class="card-header">Edit  Event</div>
   <div class="card-body">
        
+
 <form action="{{ url('event/' .$event->id) }}" method="post">       
      {!! csrf_field() !!}
         @method("PATCH")
@@ -47,6 +48,7 @@
 
 
         
+
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
     
@@ -54,4 +56,5 @@
 </div>
   
 @endsection
+
 

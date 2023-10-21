@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
 
-class EventController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        
-            
-            
-            $event = Event::all();
-            return view('Evenement.evenement')->with('event', $event);
+        //
     }
 
     /**
@@ -28,7 +23,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('Evenement.create');
+     //
     }
 
     /**
@@ -39,20 +34,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-
-         $request->validate([
-            'nom' => 'required',
-            'description' => 'required',
-            'date' => 'required|date',
-            'lieu' => 'required',
-            'artiste' => 'required',
-            'categorie' => 'required',
-        ]);
-        $input = $request->all();
-        Event::create($input);
-        return redirect('event')->with('flash_message', 'Event Addedd!');  
-
-
+        //
     }
 
     /**
@@ -63,8 +45,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $event = Event::find($id);
-        return view('Evenement.show')->with('event', $event);
+        //
     }
 
     /**
@@ -75,8 +56,7 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::find($id);
-        return view('Evenement.edit')->with('event', $event);
+        //
     }
 
     /**
@@ -88,10 +68,7 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $event = Event::find($id);
-        $input = $request->all();
-        $event->update($input);
-        return redirect('event')->with('flash_message', 'event Updated!');  
+        //
     }
 
     /**
@@ -102,7 +79,6 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        Event::destroy($id);
-        return redirect('event')->with('flash_message', 'Event deleted!');  
+        //
     }
 }
