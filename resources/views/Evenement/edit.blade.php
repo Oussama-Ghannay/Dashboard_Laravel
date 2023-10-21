@@ -21,12 +21,7 @@
         <label>Categorie</label></br>
         <input type="categorie" name="categorie" id="categorie" class="form-control"></br>
         
-        
-        
-        
-
-
-        
+ 
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
     

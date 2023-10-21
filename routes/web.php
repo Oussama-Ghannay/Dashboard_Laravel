@@ -39,6 +39,8 @@ Route::get('/addblog', function () {
 });
 Route::resource("/event", EventController::class);
 Route::resource("/blog", BlogController::class);
+Route::patch('/blog/{blog}', 'BlogController@update')->name('blog.update');
+
  
 
 

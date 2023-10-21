@@ -10,8 +10,13 @@
         <label>Title</label></br>
         <input type="text"   id="title" name="title" class="form-control"></br>
         <label>Description</label></br>
+        @error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
         <input type="text"  id="content" name="content"class="form-control"></br>
-        
+        @error('content')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
     

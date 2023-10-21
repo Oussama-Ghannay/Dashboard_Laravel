@@ -37,11 +37,11 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-    //    $request ->validate([
-    //        'title'=>'required',
-    //        'content'=>'required',
-    //        'category_id'=>'required',
-    //    ]);
+       $request ->validate([
+           'title'=>'required',
+           'content'=>'required',
+            
+       ]);
          Blog::create($request->all());
             return redirect('blog')
             ->with('success','Blog created successfully.');
@@ -67,7 +67,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::find($id);
-            return view('edit',compact('blog'));
+            return view('Blog.edit',compact('blog'));
     }
 
     /**

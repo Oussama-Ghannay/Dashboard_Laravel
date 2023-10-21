@@ -35,13 +35,12 @@
                                 @foreach($blogg as $item)
                                     <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->title }}</td>
                                     <td>{{ $item->content }}</td>
                                    
                                     <td>
     <div class="btn-group" role="group" aria-label="Actions">
         <a href="{{ url('/blog/' . $item->id) }}" title="View blog" class="btn btn-primary mx-1"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
-        <a href="{{ url('/blog/' . $item->id . '/edit') }}" title="Edit blog" class="btn btn-primary mx-1"><i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
         <form method="POST" action="{{ url('/blog' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
             {{ method_field('DELETE') }}
             {{ csrf_field() }}
