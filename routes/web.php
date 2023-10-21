@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Models\Blog;
 
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\TypeController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +48,34 @@ Route::patch('/blog/{blog}', 'BlogController@update')->name('blog.update');
  
 
 
+
+
+Route::resource('/musicindex', MusicController::class);
+
+
+
+// pour pouvoir lire lurl de l'audio
+Route::get('/audio/{filename}', function ($filename) {
+    $path = storage_path('app/audio/' . $filename);
+
+    if (file_exists($path)) {
+        return response()->file($path);
+    } else {
+        abort(404);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+// Route Type
+Route::resource("/types", TypeController::class);
 
 
 

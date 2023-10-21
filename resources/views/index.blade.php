@@ -28,6 +28,12 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    
+
 </head>
 <body>
     <div class="container-fluid position-relative d-flex p-0">
@@ -48,7 +54,7 @@
             <!-- Navbar Start -->
             @include('partials.header')
             <!-- Navbar End -->
-            
+
             {{-- ****************************************************************** --}}
             @yield('content')
             {{-- ****************************************************************** --}}
@@ -65,6 +71,8 @@
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('lib/chart/chart.min.js') }}"></script>
     <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
@@ -77,4 +85,5 @@
     <!-- Template Javascript -->
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
+
 </html>
