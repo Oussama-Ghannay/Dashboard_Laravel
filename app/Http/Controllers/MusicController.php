@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Type;
+use App\Mail\MusicAdded;
+use Illuminate\Support\Facades\Mail;
+
 
 
 
@@ -36,9 +39,25 @@ class MusicController extends Controller
 
     public function index()
     {
-        $musics = Music::all();
+        // $musics = Music::all();
+
+        $musics = Music::paginate(3); 
+
         return view ('musics.index')->with('musics', $musics);
     }
+
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search');
+    
+        // Utilisez le QueryBuilder pour effectuer la recherche
+        $musics = Music::where('title', 'like', '%' . $searchTerm . '%')->paginate(3);
+    
+        return view('musics.index')->with('musics', $musics);
+    }
+    
+
 
  
     
@@ -108,6 +127,11 @@ class MusicController extends Controller
        $music = new Music($input);
        $music->user()->associate($user);
        $music->save();
+
+
+
+         // Envoie l'e-mail à l'utilisateur
+          Mail::to($user->email)->send(new MusicAdded());
       
         
             return redirect('musicindex')->with('flash_message', 'Music Addedd!');

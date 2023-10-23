@@ -16,6 +16,13 @@
     
           <div  class="p-4">
           <h5 class="card-title">title : {{ $type->name }}</h5>
+          
+
+           <div style="background-color: white; display: inline-block;">
+            {!! DNS2D::getBarcodeHTML($type->name, 'QRCODE', 5, 5) !!}
+        </div>
+        
+
 
           <h6 class="mt-4">Musics with this Type:</h6>
           <ul>

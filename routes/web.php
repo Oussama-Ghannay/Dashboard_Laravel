@@ -68,6 +68,13 @@ Route::get('/audio/{filename}', function ($filename) {
     }
 });
 
+// Route::get('/music/search', 'MusicController@search')->name('music.search');
+
+
+
+// Route::get('/music/search', 'MusicController@search')->name('musicss.search');
+
+Route::get('/music/search', [MusicController::class, 'search'])->name('musicss.search');
 
 
 
