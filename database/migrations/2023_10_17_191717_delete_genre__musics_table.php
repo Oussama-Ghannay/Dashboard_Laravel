@@ -21,7 +21,8 @@ return new class extends Migration
             // $table->dropColumn('size');
             // $table->dropColumn('duration');
             // $table->dropColumn('year');
-           // $table->dropColumn('genre');
+
+            // $table->dropColumn('genre');
             
         });
 

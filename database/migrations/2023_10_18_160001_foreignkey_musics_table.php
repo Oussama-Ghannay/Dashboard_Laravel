@@ -15,7 +15,8 @@ return new class extends Migration
     {
 
         Schema::table('musics', function (Blueprint $table) {
-             $table->unsignedBigInteger('type_id'); // Clé étrangère
+
+         $table->unsignedBigInteger('type_id'); // Clé étrangère
             $table->foreign('type_id')->references('id')->on('types');
         });
    
