@@ -140,8 +140,12 @@ class EventController extends Controller
             $events = Event::get();
     
             // Pass the data to your Blade view
-            $data = ['events' => $events];
-    
+
+            $data = [
+                'events' => $events,
+                'date' => date('m/d/Y'),
+
+            ];    
             // Render the Blade view with the data
             $html = view('Evenement.myPDF', $data)->render();
     

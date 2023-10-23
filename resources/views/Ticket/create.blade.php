@@ -15,8 +15,7 @@
             @enderror
 
             <label>Date d'achat</label><br>
-            <input type="date" name="date_achat" id="date_achat" class="form-control"><br>
-
+<input type="date" name="date_achat" id="date_achat" class="form-control" value="{{ date('Y-m-d') }}"><br>
             @error('date_achat')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror

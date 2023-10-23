@@ -39,21 +39,20 @@ class TicketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+{
+    $request->validate([
+        'prix' => 'required|numeric|min:0',
+        'event_id' => 'required',
+    ]);
 
-         $request->validate([
-            'prix' => 'required',
-            'date_achat' => 'required',
-            'event_id' => 'required',
-        ]);
-        $input = $request->all();
-        $input['user_id'] = 1; 
-        Ticket::create($input);
-        return redirect('ticket')->with('flash_message', 'Ticket Addedd!');  
-        
+    $input = $request->except('date_achat'); // Exclure l'entrée de l'utilisateur pour la date d'achat
+    $input['user_id'] = 1;
+    $input['date_achat'] = date('Y-m-d'); // Obtient la date actuelle
 
+    Ticket::create($input);
 
-    }
+    return redirect('ticket')->with('flash_message', 'Ticket ajouté !');
+}
 
     /**
      * Display the specified resource.
