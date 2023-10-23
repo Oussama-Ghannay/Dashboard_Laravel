@@ -40,15 +40,11 @@
         @error('nom')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
-        
-        
-        
-        
-        
+<label>Image</label></br>
 
+<input type="file" name="image">
 
         
-
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
     

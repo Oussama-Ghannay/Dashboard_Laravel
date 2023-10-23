@@ -13,6 +13,7 @@
             </div>
             <!-- Form End -->
             <div class="container-fluid pt-4 px-4">
+                
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
@@ -28,6 +29,8 @@
                                         <th scope="col">Lieu</th>
                                         <th scope="col">Artiste</th>
                                         <th scope="col">Categorie</th> 
+                                        <th scope="col">Image</th>
+
             
                                         <th scope="col">   Action  </th>
 
@@ -43,6 +46,7 @@
                                     <td>{{ $item->lieu }}</td>
                                     <td>{{ $item->artiste }}</td>
                                     <td>{{ $item->categorie }}</td>
+                                    <td><img src="{{ asset('images/' . $item->image) }}" alt="Blog Image" width="100" height="100"></td>
                                     
                                     
                                   
@@ -59,8 +63,11 @@
     </div>
 </td>
 
+
+
                                     </tr>
                                 </tbody>
+                                
                                 @endforeach
                             </table>
                         </div>
@@ -70,7 +77,8 @@
                    
                    
                    
-                    
+                    <a href="{{ url('generate-pdf') }}" class="btn btn-success btn-sm" title="Add New Event">
+Télécharger en PDF                        </a>       
                   
                 </div>
             </div>

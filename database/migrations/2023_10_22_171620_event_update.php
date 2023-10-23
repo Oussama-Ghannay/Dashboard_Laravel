@@ -13,19 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-
-        
-        Schema::table('musics', function (Blueprint $table) {
-            // $table->dropColumn('image');
-            // $table->dropColumn('lyrics');
-            // $table->dropColumn('size');
-            // $table->dropColumn('duration');
-            // $table->dropColumn('year');
-
-            // $table->dropColumn('genre');
-            
+        Schema::table('event', function (Blueprint $table) {
+            $table->string('image');
+            $table->timestamps();
         });
-
     }
 
     /**

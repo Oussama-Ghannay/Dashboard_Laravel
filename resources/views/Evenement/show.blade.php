@@ -7,12 +7,15 @@
   <div class="card-header">Events Page</div>
   <div class="card-body">
         <div class="card-body">
+
         <h5 class="card-title">Nom : {{ $event->nom }}</h5>
+        <img src="{{ asset('images/' . $event->image) }}" alt="Blog Image" width="100" height="100">
         <p class="card-text">Description : {{ $event->description }}</p>
         <p class="card-text">Date : {{ $event->date }}</p>
         <p class="card-text">Lieu : {{ $event->lieu }}</p>
         <p class="card-text">Artiste : {{ $event->artiste }}</p>
         <p class="card-text">Categorie : {{ $event->categorie }}</p>
+        
         
   </div>
     </hr>

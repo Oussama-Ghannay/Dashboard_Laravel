@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\TicketController;
 use App\Models\Blog;
 
 use App\Http\Controllers\MusicController;
@@ -32,7 +33,8 @@ Route::get('/events', function () {
 });
 
 Route::resource("/event", EventController::class);
-
+//pdf
+Route::get('generate-pdf', [EventController::class,'pdf']);
 
 // ################################################################################
 Route::get('/blogii', function () {
@@ -45,6 +47,7 @@ Route::get('/addblog', function () {
     return view('Blog.create');
 });
 Route::resource("/event", EventController::class);
+Route::resource("/ticket", TicketController::class);
 Route::resource("/blog", BlogController::class);
 Route::patch('/blog/{blog}', 'BlogController@update')->name('blog.update');
 

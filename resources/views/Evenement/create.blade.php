@@ -38,6 +38,9 @@
         @error('categorie')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
+<label>Image</label></br>
+<input type="file" name="image">
+
 
        
         
