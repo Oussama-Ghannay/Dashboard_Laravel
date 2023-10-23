@@ -34,6 +34,8 @@
                         <th scope="col">title</th>
                         <th scope="col">audio</th>
                         <th scope="col">type</th>
+                        <th scope="col">QRCodeType</th>
+
 
                         <th scope="col">Propritaire</th>
 
@@ -71,6 +73,18 @@
                         </td>
 
                         <td>{{ $item->type->name }}</td>
+
+                        <td style="background-color: white;">{!! DNS2D::getBarcodeHTML($item->type->name, 'QRCODE', 5, 5) !!}</td>
+
+
+
+
+
+                       
+
+
+
+
 
                         <td>{{ $item->user->name }}</td>
 
